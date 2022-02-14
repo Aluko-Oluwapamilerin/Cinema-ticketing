@@ -1,0 +1,94 @@
+*{
+    margin: 0px;
+}
+#container{
+    height: 788px;
+    background-image: url(Hallsit.jpg);
+    width: 100%;
+    background-size: cover;
+}
+p{
+    background: transparent;
+    font-size: 20px;
+    color: white;
+    margin-bottom: -30px;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-size: 30px;
+    background: transparent;
+    color: #c5cbd3;
+}
+img{
+    height: 50px;
+    background: transparent;
+    margin-left: -10px;
+    margin-bottom: 30px;
+}
+#firsttext{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+#firstbox{
+    margin: 0px 600px;
+    border: solid white;
+    border-radius: 10px;
+    width: 300px;
+    height: 430px;
+    padding-left: 30px;
+    background: transparent;
+    top: 200px;
+    position: relative;
+}
+input{
+    background: transparent;
+}
+label{
+    background: transparent;
+    color: white;
+}
+#t1{
+    width: 170px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    color: white;
+}
+#t2{
+    width: 172px;
+    margin-bottom: 20px;
+    color: white;
+}
+#t3{
+    width: 145px;
+    margin-bottom: 20px;
+    color: white;
+}
+#t4{
+    width: 170px;
+    margin-bottom: 20px;
+    color: white;
+}
+#t5{
+    width: 173px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+button{
+    margin-left: 90px;
+    margin-top: 0px;
+    background: transparent;
+    color: white;
+}
+.text{
+    font-size: 15px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+a{
+    background: transparent;
+}

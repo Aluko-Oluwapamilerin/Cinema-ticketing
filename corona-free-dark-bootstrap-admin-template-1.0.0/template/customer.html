@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="demo">
+
+    </div>
+
+    <script>
+
+      function loadList() {
+        let gett=localStorage.getItem("cinemaInfo")
+        let conv=JSON.parse(gett);
+        for (let i = 0; i < conv.length; i++) {
+         demo.innerHTML=[i];
+            
+        }
+      }
+      loadList();
+    </script>
+    
+</body>
+</html>

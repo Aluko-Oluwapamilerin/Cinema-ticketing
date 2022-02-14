@@ -1,0 +1,59 @@
+*{
+    background-image: url(Hallsit.jpg);
+    background-size: cover;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-size: 70px;
+    background: transparent;
+    color: #c5cbd3;
+}
+img{
+    height: 120px;
+    background: transparent;
+    margin-left: -30px;
+}
+#firsttext{
+    display: flex;
+    justify-content: center;
+}
+#login{
+    margin: 0px 590px;
+    padding-left: 10px;
+    background: transparent;
+    border: solid white;
+    border-radius: 10px;
+    height: 320px;
+    width: 320px;
+}
+p{
+    background: transparent;
+    font-size: 16.5px;
+    color: white;
+}
+#uname{
+    width: 200px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    background: transparent;
+}
+#pword{
+    width: 204px;
+    background: transparent;
+}
+input{
+    background: transparent;
+    color: white;
+}
+label{
+    background: transparent;
+    color: white;
+}
+button{
+    margin-left: 120px;
+    margin-top: 60px;
+    background: transparent;
+    color: white;
+}
