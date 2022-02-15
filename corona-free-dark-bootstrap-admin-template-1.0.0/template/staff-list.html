@@ -245,7 +245,9 @@
                 location.reload();
             }
         }
-        deletestaff=(e)=>{
+
+                // <!-- this is the function for delete -->
+                deletestaff=(e)=>{
                   if(confirm("Are you sure?")){
                     let oldStaff = localStorage.getItem('staffInfo');
                     let newStaff= JSON.parse(oldStaff);
@@ -253,17 +255,20 @@
                     localStorage.setItem('staffInfo', JSON.stringify(newStaff));
                     }
                     location.reload()
-                    uname.focus();
+                    firstname.focus();
                 }
-                function edit(cus){
+                
+                // <!-- this is the function for update -->
+                edit=(cus)=>{
                   users = localStorage.getItem("staffInfo");
                   demo.innerHTML='<span onclick="editcus('+cus+')"> Edit</span>'
                   let conv = JSON.parse(users)
                   firstname.value=conv[cus].fName;
                   lastname.value=conv[cus].lName;
                   post.value=conv[cus].position;
+                  firstname.focus();
                 }
-                function editcus(pami) {
+                editcus=(pami)=> {
                   users = localStorage.getItem("staffInfo");
                   let conv = JSON.parse(users);
                   conv[pami].fName= firstname.value

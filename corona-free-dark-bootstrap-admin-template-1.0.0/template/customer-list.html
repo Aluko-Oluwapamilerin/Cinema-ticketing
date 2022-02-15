@@ -269,6 +269,7 @@
                   let user = JSON.parse(customer)
                   uname.value=user[cus].userName;
                   pword.value=user[cus].password;
+                  uname.focus();
                 }
                 function editcustomer(pami) {
                   customer = localStorage.getItem("cinemaInfo");
