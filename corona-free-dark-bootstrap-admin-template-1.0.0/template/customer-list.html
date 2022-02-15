@@ -212,7 +212,7 @@
                     jUsers = localStorage.getItem("cinemaInfo");
                     Customers = JSON.parse(jUsers);
                     for (i = 0; i < Customers.length; i++){
-                        b += "<tr><td>" + `${i+1}` + "</td><td>" + Customers[i].userName+ "</td><td>" +Customers[i].password+"</td><td>"+'<button onclick="deletecustomers('+i+')" class="btn btn-button bg-light"><img src="trash.svg" alt="" style="width:20px; height:20px;"></button>'+"</td><td>"+'<button onclick="edit('+i+')" class="btn btn bg-light"><img src="arrow-up-right.svg" alt="" style="width:15px; height: 15px;"></button>'+"</td></tr>";
+                        b += "<tr><td>" + `${i+1}` + "</td><td>" + Customers[i].userName+ "</td><td>" +Customers[i].password+"</td><td>"+'<button onclick="deletecustomers('+i+')" class="btn btn-button bg-light"><img src="Image/trash.svg" alt="" style="width:20px; height:20px;"></button>'+"</td><td>"+'<button onclick="edit('+i+')" class="btn btn bg-light"><img src="Image/arrow-up-right.svg" alt="" style="width:15px; height: 15px;"></button>'+"</td></tr>";
                     }
                     document.getElementById('1').innerHTML = b;
                 }

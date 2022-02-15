@@ -213,7 +213,7 @@
                 users = localStorage.getItem("staffInfo");
                 staff = JSON.parse(users);
                 for (i = 0; i < staff.length; i++) {
-                    c += "<tr><td>" + `${i+1}` + "</td><td>" + staff[i].fName+ "</td><td>" +staff[i].lName+"</td><td>"+ staff[i].position+" </td><td>"+'<button onclick="deletestaff('+i+')"class="btn btn bg-light"><img src="trash.svg" alt="" style="width:20px; height:20px;"></button> ' + "</td><td>" + '<button class="btn btn bg-light" onclick="edit('+i+')"><img src="arrow-up-right.svg" alt="" style="width:15px; height: 15px;"></button>' + "</td></tr>";
+                    c += "<tr><td>" + `${i+1}` + "</td><td>" + staff[i].fName+ "</td><td>" +staff[i].lName+"</td><td>"+ staff[i].position+" </td><td>"+'<button onclick="deletestaff('+i+')"class="btn btn bg-light"><img src="Image/trash.svg" alt="" style="width:20px; height:20px;"></button> ' + "</td><td>" + '<button class="btn btn bg-light" onclick="edit('+i+')"><img src="Image/arrow-up-right.svg" alt="" style="width:15px; height: 15px;"></button>' + "</td></tr>";
                 }
                 document.getElementById('2').innerHTML = c;
             }
