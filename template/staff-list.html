@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Palms Cinema</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
@@ -74,27 +75,34 @@
               <span class="nav-link">Navigation</span>
             </li>
             <li class="nav-item menu-items">
+              <a class="nav-link" href="index.html">
+                  <span class="menu-icon">
+                      <i class="mdi mdi-speedometer"></i>
+                    </span>
+                <span class="menu-title">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item menu-items">
               <a class="nav-link" href="customer-list.html">
+                <span class="menu-icon">
+                  <i class="bi bi-list-check"></i>
+                </span>
                 <span class="menu-title">Customer list</span>
               </a>
             </li>
             <li class="nav-item menu-items">
               <a class="nav-link" href="staff-list.html">
+                <span class="menu-icon">
+                  <i class="bi bi-list-ul"></i>
+                </span>
                 <span class="menu-title">Staff list</span>
               </a>
             </li>
             <li class="nav-item menu-items">
-              <a class="nav-link">
-                <span class="menu-title">Tables</span>
-              </a>
-            </li>
-            <li class="nav-item menu-items">
-                <a class="nav-link" href="#">
-                  <span class="menu-title">Customer list</span>
-                </a>
-              </li>
-            <li class="nav-item menu-items">
               <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                  <span class="menu-icon">
+                      <i class="bi bi-shield-check"></i>
+                    </span>
                 <span class="menu-title">User Pages</span>
                 <i class="menu-arrow"></i>
               </a>
@@ -159,7 +167,7 @@
                       </div>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
+                    <a class="dropdown-item preview-item" onclick="logout()">
                       <div class="preview-thumbnail">
                         <div class="preview-icon bg-dark rounded-circle">
                           <i class="mdi mdi-logout text-danger"></i>
@@ -192,7 +200,7 @@
         </tr>
     </table>    
         <table border="1" width="60%"; align="center">
-            <tr>
+            <tr class="text-center">
                 <td>S/N</td>
                 <td>Firstname</td>
                 <td>Lastname</td>
@@ -201,7 +209,7 @@
                 <td>Update</td>
             </tr>
             
-            <tbody id="2">
+            <tbody id="2" class="text-center">
 
             </tbody>
         </table>
@@ -213,7 +221,7 @@
                 users = localStorage.getItem("staffInfo");
                 staff = JSON.parse(users);
                 for (i = 0; i < staff.length; i++) {
-                    c += "<tr><td>" + `${i+1}` + "</td><td>" + staff[i].fName+ "</td><td>" +staff[i].lName+"</td><td>"+ staff[i].position+" </td><td>"+'<button onclick="deletestaff('+i+')"class="btn btn bg-light"><img src="Image/trash.svg" alt="" style="width:20px; height:20px;"></button> ' + "</td><td>" + '<button class="btn btn bg-light" onclick="edit('+i+')"><img src="Image/arrow-up-right.svg" alt="" style="width:15px; height: 15px;"></button>' + "</td></tr>";
+                    c += "<tr><td>" + `${i+1}` + "</td><td>" + staff[i].fName+ "</td><td>" +staff[i].lName+"</td><td>"+ staff[i].position+" </td><td>"+'<button onclick="deletestaff('+i+')"class="btn btn bg-light p-3"><img src="Image/trash.svg" alt="" style="width:20px; height:20px;"></button> ' + "</td><td>" + '<button class="btn btn-button bg-success bi bi-pencil-square p-3" onclick="edit('+i+')"></button>' + "</td></tr>";
                 }
                 document.getElementById('2').innerHTML = c;
             }
@@ -277,6 +285,12 @@
                   localStorage.setItem('staffInfo', JSON.stringify(conv))
                   location.reload();
                 }
+                // this is the function for logout
+                logout=()=>{
+                if(confirm("Are you sure?")){
+                  location.href = "admin-login-page.html"
+                }
+              }
       </script>
 
       
