@@ -9,8 +9,17 @@
 <script type="text/javascript">
     function arranger()
     {
-        var noOfChairs = nofc.value;
-        var noPerRow = rows.value;
+        
+        var char = JSON.parse(localStorage.getItem("chairs"));
+        for(let i=0;i<char.length;i++){
+        nofc.value=char[i].noOfChair;
+        rows.value=char[i].noOfRows;
+
+        }
+
+
+         noOfChairs = nofc.value;
+         noPerRow = rows.value;
         var chairs = '';
         cArrange = 0;
         
@@ -20,7 +29,7 @@
          {
         
         // chairs += r+'<td><img src="chair.jpg" width="100" height="150"></td>'
-        chairs +=`<td><span style="background-color: red;">NO ${r+1}</span><img src="Image/chair.jpg" width="100" height="150"></td>`
+        chairs +=`<td><img src="Image/chair.png" width="150" height="150" onclick="say(${r})" ><span style="background-color: tomato;">NO ${r+1}</span></td>`
         cArrange++;
         if (cArrange == noPerRow) {
          chairs+= '</tr><tr>';
@@ -32,10 +41,16 @@
 
     document.getElementById("hall").innerHTML= chairs;
     }
+
+
+    say=(r)=>{
+        alert(r+1);
+    }
     </script>
-<body>
-    Enter number of chairs <input type="text" id="nofc"> 
-    How many chairs per rows <input type="text" id="rows"><button onclick="arranger()">Arrange Chairs</button>
+
+<body onload="arranger()" style="background-image:url(Image/36.jpg); background-repeat:no-repeat; background-size:cover;">
+    <input type="text" id="nofc" style="display:none"> 
+    <input type="text" id="rows" style="display:none">
     
     <table id="hall">
         <tr>

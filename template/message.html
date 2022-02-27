@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Customer-list</title>
-</head>
+    <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
@@ -15,9 +14,10 @@
     <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.theme.default.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  </head>
-  <body>
-<div class="container-scroller">
+</head>
+<body>
+    <div class="container-scroller">
+      <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
           <a class="sidebar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
@@ -95,7 +95,7 @@
               <span class="menu-icon">
                 <i class="bi bi-envelope-open"></i>
               </span>
-              <span class="menu-title">Message</span>
+              <span class="menu-title text-light" >Message</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -191,145 +191,52 @@
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
                   <span class="mdi mdi-format-line-spacing"></span>
                 </button>
-              </div>   -->
+              </div> -->
 
-          <!-- //CUSTOMER-LIST -->
-          <body>
-            <div class="card" style="width: 100%; border: none;">
-              <div class="card-body">
-                <div class="d-flex align-items-center justify-content-between">
-                  <h4 class="card-title my-2 lead">Customer-list <i class="bi bi-people h3"></i></h4>
-                  <input type="text" class="form-control w-50" id="myInput" placeholder="Search">
-                </div>
-                <div class="table-responsive text-center" style="margin: auto;">
-                  <table align="center" style="margin-top: 2vh;">
-                    <tr>
-                      <td>Username:</td>
-                      <td><input type="text" class="form-control px-4" id="uname" style="background:transparent; color:white;"></td>
-                      <td class="px-2">Password:</td>
-                      <td><input type="text" id="pword" style="background:transparent; color:white;;" class="form-control px-4"></td>
-                      <td colspan="2" align="center"><button id="demo" class="btn btn-button bg-danger mx-3"><span onclick="save()">Submit</span></button></td>
-                    </tr>
+              <div class="card" style=" width: 100%; border: none;">
+                <div class="card-body">
+                  <h4 class="card-title my-3 lead h2">Messages <i class="bi bi-envelope h3""></i></h4>
+                  <div class="table-responsive text-center" style="margin: auto;">
+                    <table border="1" width=90%"; align="center">
+                      <tr class="text-center">
+                          <td>S/N</td>
+                          <td>Email</td>
+                          <td>Message</td>
+                          <td>Delete</td>
+                      </tr>
+                      <tbody id="myMessage" class="text-center" >
+              
+                      </tbody>
                   </table>
                   
-                  <table border="1" width="90%"; align="center" style="margin-top: 2vh;">
-                    <tr class="text-center">
-                      <td>S/N</td>
-                      <td>Username</td>
-                      <td>Password</td>
-                      <td>Delete</td>
-                      <td>Update</td>
-                    </tr>
-                    <tbody id="1" class="text-center">
-
-                    </tbody>
-                  </table>
-
-                 </div>
+                  </div>
+                </div>
               </div>
-            </div>
+
+    <script>
+        var c = "";
+            if(localStorage.messages){
+                usersMessage = localStorage.getItem("messages");
+                messagee = JSON.parse(usersMessage);
+                for (i = 0; i < messagee.length; i++) {
+               
+                    c += "<tr><td>" + `${i+1}` + "</td><td>" + messagee[i].email+ "</td><td>"+ messagee[i].message+" </td><td>"+'<button class="btn btn bg-light"onclick="deletemessage('+i+')"><img src="Image/trash.svg" alt="" style="width:20px; height:20px;" ></button>'+"</td></tr>";
+                }
+                document.getElementById('myMessage').innerHTML = c;
+            }
             
-            <script>
-                var b = "";
-                uname.focus();
-                if (localStorage.cinemaInfo){
-                    jUsers = localStorage.getItem("cinemaInfo");
-                    Customers = JSON.parse(jUsers);
-                    for (i = 0; i < Customers.length; i++){
-                        b += "<tr><td>" + `${i+1}` + "</td><td>" + Customers[i].userName+ "</td><td>" +Customers[i].password+"</td><td>"+'<button onclick="deletecustomers('+i+')" class="btn btn-button   bg-light p-3"><img src="Image/trash.svg" alt="" style="width:20px; height:20px;"></button>'+"</td><td>"+'<button onclick="edit('+i+')" class="btn btn-button bg-success bi bi-pencil-square p-3"></button>'+"</td></tr>";
-                    }
-                    document.getElementById('1').innerHTML = b;
-                }
-                var arr = [];
-                arr = localStorage.cinemaInfo ? JSON.parse(localStorage.cinemaInfo) : arr=[]
-                let array = JSON.stringify(localStorage.cinemaInfo);
-                let myArray = JSON.parse(localStorage.cinemaInfo);
-                save=()=>{
-                  var found = myArray.find((val, i)=>val.userName == uname.value || val.password == pword.value)
-                  if (found){
-                    alert("Username not available");
-                    uname.focus();
-                  }
-                  else if (uname.value == ""){
-                    alert("Fill required field");
-                    uname.focus();
-                  }
-                  else if(pword.value == ""){
-                    alert("Fill required field");
-                    pword.focus();
-                  }
-                  else{
-                    var obj = {  
-                        userName:uname.value, 
-                        password:pword.value,
-                    }
-                    arr.push(obj)
-                    localStorage.cinemaInfo = JSON.stringify(arr)
-                    uname.value = "";
-                    pword.value = "";
-                
-                    var b = "";
-                    if (localStorage.cinemaInfo){
-                    jUsers = localStorage.getItem("cinemaInfo");
-                    Customers = JSON.parse(jUsers);
-                    for (i = 0; i < Customers.length; i++){
-                      b += "<tr><td>" + `${i+1}` + "</td><td>" + Customers[i].userName+ "</td><td>" +Customers[i].password+"</td><td>"+'<button onclick="deletecustomers('+1+')" class="btn btn-button bg-light"><img src="trash.svg" alt="" style="width:20px; height:20px;"></button>'+"</td><td>"+'<button onclick="edit('+i+')" class="btn btn bg-light"><img src="arrow-up-right.svg" alt="" style="width:15px; height: 15px;"></button>'+"</td></tr>";
-                    }
-                    document.getElementById('1').innerHTML = b;
-                    location.reload()
-                    }
-                } 
-                  }
-
-                // <!-- this is the function for the delete -->
-                deletecustomers=(a)=>{
-                  if(confirm("Are you sure?")){
-                    let oldCustomer = localStorage.getItem('cinemaInfo');
-                    let newCustomer = JSON.parse(oldCustomer);
-                    newCustomer.splice(a,1);
-                    localStorage.setItem('cinemaInfo', JSON.stringify(newCustomer));
-                    }
-                    location.reload()
-                    uname.focus();
-                }
-
-              // <-- this is the function for the update -->
-                function edit(cus){
-                  customer = localStorage.getItem("cinemaInfo");
-                  demo.innerHTML='<span onclick="editcustomer('+cus+')"> Edit</span>'
-                  let user = JSON.parse(customer)
-                  uname.value=user[cus].userName;
-                  pword.value=user[cus].password;
-                  uname.focus();
-                }
-                function editcustomer(pami) {
-                  customer = localStorage.getItem("cinemaInfo");
-                  let user = JSON.parse(customer);
-                  user[pami].userName= uname.value
-                  user[pami].password= pword.value
-                  localStorage.setItem('cinemaInfo', JSON.stringify(user))
-                  alert("Saved")
-                  location.reload();  
-                }
-
-              // this is the function for log out
-                logout=()=>{
-                  if(confirm("Are you sure?")){
-                  location.href = "admin-login-page.html"
-                }
-              }
-              
-              // this is the function for search bar
-              $(document).ready(function(){
-              $("#myInput").on("keyup", function() {
-              var value = $(this).val().toLowerCase();
-              $("#1 tr").filter(function() {
-              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-              });
-              });
-              });
-            </script>
-
+        deletemessage=(a)=>{
+            if(confirm("Are you sure?")){
+                let oldMessage = localStorage.getItem('messages');
+                let newMessage = JSON.parse(oldMessage);
+                newMessage.splice(a,1);
+                localStorage.setItem('messages', JSON.stringify(newMessage));
+            }
+            location.reload()
+        }
+    
+    </script>
+</body>
     <script src="assets/vendors/js/vendor.bundle.base.js"></script>
     <script src="assets/vendors/chart.js/Chart.min.js"></script>
     <script src="assets/vendors/progressbar.js/progressbar.min.js"></script>
@@ -342,5 +249,4 @@
     <script src="assets/js/settings.js"></script>
     <script src="assets/js/todolist.js"></script>
     <script src="assets/js/dashboard.js"></script>
-  </body>
-  </html>
+</html>

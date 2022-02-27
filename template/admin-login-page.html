@@ -22,10 +22,10 @@
                 <div class="collapse navbar-collapse" id="navmenu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-4">
-                            <a href="Home-page.html" class="nav-link">Home</a>
+                            <a href="index.html" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a href="#questons" class="nav-link">Contact Us</a>
+                            <a href="contact.html" class="nav-link">Contact Us</a>
                         </li>
                         <li class="nav-item mx-4">
                             <a href="registration-page.html" class="nav-link">Sign Up</a>
@@ -34,7 +34,7 @@
                                 <a href="login.html" class="nav-link">Log In</a>
                         </li>
                         <li class="nav-item mx-4">
-                                <a href="admin-login-page.html" class="nav-link">Admin</a>
+                                <a href="admin.html" class="nav-link">Admin</a>
                         </li>
                     </ul>
                 </div>
@@ -87,7 +87,7 @@
             var found = myArray.find((val, i)=>val.userName == uname.value && val.password == pword.value)
             if (found) {
                 alert("Login successful")
-                    location.href =  'index.html'
+                    location.href =  'admin.html'
                 } else {
                     uname.focus();
                 }

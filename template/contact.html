@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body style="background-color: #e8e8e8;" class="bg-dark">
+      <!-- Nav bar -->
+      <nav class="navbar navbar-expand-lg navbar-dark navbar fixed-top" style="background-color:black;">
+          <div class="container">
+              <a href="#" class="navbar-brand">Palms Cinema</a>
+  
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+  
+              <div class="collapse navbar-collapse" id="navmenu">
+                  <ul class="navbar-nav ms-auto">
+                      <li class="nav-item mx-4">
+                          <a href="index.html" class="nav-link">Home</a>
+                      </li>
+                      <li class="nav-item mx-4">
+                          <a href="contact.html" class="nav-link">Contact Us</a>
+                      </li>
+                      <li class="nav-item mx-4">
+                          <a href="registration-page.html" class="nav-link">Sign Up</a>
+                      </li>
+                      <li class="nav-item mx-4">
+                              <a href="login.html" class="nav-link">Log In</a>
+                      </li>
+                      <li class="nav-item mx-4">
+                              <a  class="nav-link" data-toggle="tooltip" title="Only for Admin!" onclick="hide()">Admin</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+
+    <div class="container-scroller" style="padding-top: 100px;">
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+          <div class="row w-100 m-0">
+            <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
+              <div class="card col-lg-4 mx-auto" style="border:none;">
+                <div class="card-body px-5 py-5">
+                  <h3 class="card-title text-left mb-3">Contact Us</h3>
+                  
+                  <form>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control p_input" id="email" style="border: 1px solid #2c2e33; box-shadow:none;">
+                    </div>
+                    <div class="form-group">
+                        <label>subject</label>
+                        <input type="text" class="form-control p_input" id="subject" style="border: 1px solid #2c2e33; box-shadow:none;">
+                    </div>
+                    <div class="field-type-text-long field-name-field-message field-widget-text-textarea form-wrapper form-group" id="edit-field-message"><div id="field-message-add-more-wrapper"><div class="form-type-textarea form-item-field-message-und-0-value form-item form-group">
+                        <label class="element-invisible" for="edit-field-message-und-0-value">Message
+                        <div class="form-textarea-wrapper"><textarea class="text-full form-control form-textarea required" maxlength="3000" id="message" name="field_message[und][0][value]" cols="60" rows="10" style="resize:none; border: 1px solid #2c2e33; box-shadow:none; "></textarea></div>
+                    </div>
+                  </form>
+
+                  <button type="submit" onclick="send()" class="btn btn-outline-success my-2"><span><i class="bi bi-check-circle"></i></span>
+                    Send
+                  </button>
+                </div>
+              </div>
+            </div>      
+          </div>
+        </div>
+      </div>
+
+      <script>
+        email.focus();
+        var arr = [];
+        arr = localStorage.messages  ? JSON.parse(localStorage.messages) : arr=[]
+        send=()=>{
+          var obj = {
+            email: email.value,
+            subject: subject.value,
+            message: message.value,
+          }
+          arr.push(obj)
+          localStorage.messages = JSON.stringify(arr)
+          email.value = "";
+          subject.value = "";
+          message.value = "";
+        }
+      </script>
+      <script>
+        hide=()=>{
+            var pass = prompt("Input password")
+            if(pass == "chicken"){
+                alert("Welcome Sir")
+                location.href="admin.html"
+                }
+               else{
+                 location.href="contact.html"
+  
+                 alert("Only Admin allowed")
+  
+               }
+              }
+              $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();
+                });
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="assets/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <script src="assets/js/settings.js"></script>
+    <script src="assets/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="assets/js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+</body>
+</html>
