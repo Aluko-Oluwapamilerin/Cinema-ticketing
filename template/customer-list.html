@@ -38,14 +38,14 @@
               </div>
               <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
               <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-                <a href="#" class="dropdown-item preview-item">
+                <a onclick="logout()" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-settings text-primary"></i>
+                      <i class="mdi mdi-logout text-danger"></i>
                     </div>
                   </div>
                   <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">Hall setting</p>
+                    <p class="preview-subject ellipsis mb-1 text-small">Log out</p>
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -207,7 +207,7 @@
                       <td>Username:</td>
                       <td><input type="text" class="form-control px-4" id="uname" style="background:transparent; color:white;"></td>
                       <td class="px-2">Password:</td>
-                      <td><input type="text" id="pword" style="background:transparent; color:white;;" class="form-control px-4"></td>
+                      <td><input type="text" id="pword" style="background:transparent; color:white;" class="form-control px-4"></td>
                       <td colspan="2" align="center"><button id="demo" class="btn btn-button bg-danger mx-3"><span onclick="save()">Submit</span></button></td>
                     </tr>
                   </table>
@@ -315,7 +315,7 @@
               // this is the function for log out
                 logout=()=>{
                   if(confirm("Are you sure?")){
-                  location.href = "admin-login-page.html"
+                  window.open("admin-login-page.html")
                 }
               }
               

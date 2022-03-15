@@ -52,20 +52,18 @@
                               <label>Username</label>
                               <input type="text" class="form-control p_input text-light" id="uname" style="background-color: #2A3038;border: 1px solid #2c2e33; box-shadow:none;">
                             </div>
-                            <div class="form-group">
+                            <div class="">
                               <label>Password</label>
-                              <input type="password" class="form-control p_input text-light" id="pword" style="background-color: #2A3038; border: 1px solid #2c2e33; box-shadow:none;">
+                              <div class="d-flex align-items-center justify-content-between" style="height: 40px; background-color: #2A3038; border: 1px solid #2c2e33; box-shadow:none; border-radius: 4px;">
+                                <input type="password" class="text-light" id="pword" style="border-radius: 0%; border: none; outline: none; background-color: #2A3038; width: 95%;">
+                                <span id="eye" style="background-color: #2A3038; padding-right: 5px;"><i onclick="myFunction()" class="bi bi-eye"></i></span>
+                                <span id="closedeye" style="background-color: #2A3038; padding-right: 5px; display: none;"><i onclick="myFunction()" class="bi bi-eye-slash"></i></span>
+    
                             </div>
-                            <div class="form-group d-flex align-items-center justify-content-between">
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input type="checkbox" onclick="myFunction()" class="form-check-input"> Show password </label>
-                              </div>
-                              <!-- <a href="#" class="forgot-pass">Forgot password</a> -->
                             </div>
                           </form>
                           <div class="text-center">
-                                <button type="submit" onclick="collect()" class="btn btn-primary btn-block enter-btn my-2" style="width:26vw;">Login
+                                <button type="submit" onclick="collect()" class="btn btn-primary btn-block enter-btn mt-4" style="width:26vw;">Login
                                 <i class="bi bi-laptop"></i>
                                 </button>
                             </div>
@@ -93,16 +91,22 @@
                 }
                 uname.value = "";
                 pword.value = "";
-            }
-            myFunction=()=>{
+          }
+          myFunction=()=>{
             var y = document.getElementById("pword");
             if (y.type === "password") {
                 y.type = "text";
+                document.getElementById("closedeye").style.display = "block"
+                document.getElementById("eye").style.display = "none"
+
             } 
             else {
                 y.type = "password";
+                document.getElementById("eye").style.display = "block"
+                document.getElementById("closedeye").style.display = "none"
             }
         }
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="assets/vendors/js/vendor.bundle.base.js"></script>

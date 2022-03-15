@@ -224,6 +224,11 @@
 
            localStorage.chairs = JSON.stringify(arr);
        }
+       logout=()=>{
+         if(confirm("Are you sure?")){
+           window.open('admin-login-page.html')
+          }
+        } 
    </script>
 
     <script src="assets/vendors/js/vendor.bundle.base.js"></script>

@@ -1,0 +1,83 @@
+@media (max-width: 812px){
+    .footer {
+        height: 30vh;
+    }
+    .footer-link {
+        font-size: 12px;
+        left: 0px;
+        position: absolute;
+    }
+    .social {
+        padding-right: 45px;
+    }
+    .sign-up {
+        width: 100%;
+    }
+    .footer-end {
+        font-size: 12px;
+        padding-top: 70px;
+    }
+    #navbar {
+        height: 7vh;
+    }
+}
+@media (max-width: 1366px) {
+    .home-container {
+        max-height: 70vh;
+    }
+    .home-page {
+        padding-top: 70vh;
+        height: 50vh;
+    }
+    .navbar {
+        height: 5vh;
+    }
+    .card-body {
+        width: 70vw;
+        height: 80vw;
+    }
+    .signup-container {
+        margin-right: 50vw;
+        margin-top: 20vw;
+    }
+    label {
+        font-size: 25px;
+    }
+    .card-title {
+        padding-top: 25px;
+        font-size: 40px;
+    }
+    form {
+        padding-top: 25px;
+    }
+    /* Login-page */
+    .signup {
+        margin-right: 50vw;
+        margin-top: 20vw;
+    }
+    .card-body1 {
+        width: 70vw;
+        height: 55vw;   
+    }
+    body {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        height: 85vh;
+    }
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    /* contact-us */
+    .message-container {
+        margin-top: 20vw;
+    }
+    .message-card {
+        width: 70vw;
+        height: 80vw;
+    }
+    .form-textarea-wrapper {
+        width: 60vw;
+    }
+}

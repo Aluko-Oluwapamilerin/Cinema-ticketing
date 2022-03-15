@@ -38,14 +38,14 @@
               </div>
               <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
               <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-                <a href="#" class="dropdown-item preview-item">
+                <a onclick="logout()" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-settings text-primary"></i>
+                      <i class="mdi mdi-logout text-danger"></i>
                     </div>
                   </div>
                   <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">Hall setting</p>
+                    <p class="preview-subject ellipsis mb-1 text-small">Log out</p>
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -304,9 +304,9 @@
                 // this is the function for logout
                 logout=()=>{
                 if(confirm("Are you sure?")){
-                  location.href = "admin-login-page.html"
+                  window.open('admin-login-page.html')
                 }
-              }
+              } 
 
               $(document).ready(function(){
               $("#myInput").on("keyup", function() {
